@@ -2,6 +2,7 @@
 
 # ---- Build ----
     FROM node:18-alpine AS builder
+    #FROM node:lts-alpine3.20
 
     ARG NEXT_PUBLIC_PROMPTFOO_BASE_URL
     ENV NEXT_PUBLIC_PROMPTFOO_BASE_URL=${NEXT_PUBLIC_PROMPTFOO_BASE_URL}
@@ -39,6 +40,7 @@
     
     # ---- Final Stage ----
     FROM node:18-alpine
+#    FROM node:lts-alpine3.20
     
     ENV NEXT_TELEMETRY_DISABLED 1
     
@@ -48,6 +50,7 @@
     COPY --from=builder /app/src/web/nextui/.next/standalone ./
     COPY --from=builder /app/src/web/nextui/.next/static ./.next/static
     COPY --from=builder /app/drizzle ./.next/server/drizzle
+    RUN npm install -g promptfoo
     
     RUN mkdir -p /root/.promptfoo/output
     

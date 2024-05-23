@@ -7,5 +7,9 @@
     "workspaceMount": "source=.,target=/workspace,type=bind",
     "workspaceFolder": "/workspace",
     "customizations": {"vscode": {"extensions": ["ms-python.python"]}},
+    "containerEnv": {
+	"OPENAI_API_KEY": "xx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "GROQ_API_KEY" : "gsk_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    }
     //"remoteUser": "root"
 }

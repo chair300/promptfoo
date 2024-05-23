@@ -1,0 +1,23 @@
+prompts:
+  - 'Answer this as concisely as possible: {{question}}'
+
+providers:
+  - id: openai:gpt-3.5-turbo-0613
+    config:
+      temperature: 0.1
+
+  - id: openai:chat:mixtral-8x7b-32768
+    config:
+      apiBaseUrl: https://api.groq.com/openai/v1
+      apiKeyEnvar: GROQ_API_KEY
+  - id: openai:chat:llama3-70b-8192
+    config:
+      apiBaseUrl: https://api.groq.com/openai/v1
+      apiKeyEnvar: GROQ_API_KEY
+
+tests:
+  - vars:
+      question: What is the capital of France?
+    assert:
+      - type: equals
+        value: Paris
