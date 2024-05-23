@@ -1,0 +1,11 @@
+{
+    "name": "Promptfoo",
+    "dockerFile": "Dockerfile",
+    "features": {},
+    "forwardPorts": [3000],
+    "mounts": [],
+    "workspaceMount": "source=.,target=/workspace,type=bind",
+    "workspaceFolder": "/workspace",
+    "customizations": {"vscode": {"extensions": ["ms-python.python"]}},
+    //"remoteUser": "root"
+}
